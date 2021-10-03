@@ -6,7 +6,7 @@
 #}
 terraform {
   backend "gcs" {
-    prefix = "terraform-circle/state"
+    prefix = "terraform/state""
     bucket = "terraform-admin-27t75xo"
   }
 }
