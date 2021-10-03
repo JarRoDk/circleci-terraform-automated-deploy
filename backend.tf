@@ -7,6 +7,6 @@
 terraform {
   backend "gcs" {
     prefix = "terraform-circle/state"
-    bucket = "terraform-circle-03092021"
+    bucket = "terraform-admin-27t75xo"
   }
 }
