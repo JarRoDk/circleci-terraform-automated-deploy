@@ -3,6 +3,6 @@
 #}
 
 provider "google" {
-  project = "quantum-bonus-325717"
+  project = "terraform-admin-27t75xoa"
   region  = "europe-central2"
 }
