@@ -18,10 +18,6 @@ workflows:
           persist-workspace: true
           requires:
             - terraform/validate
-      - hold-apply:
-          type: approval
-          requires:
-            - terraform/plan
       - terraform/apply:
           attach-workspace: true
           context: terraform
@@ -29,4 +25,4 @@ workflows:
             branches:
               only: master
           requires:
-            - hold-apply
+            - terraform/plan
