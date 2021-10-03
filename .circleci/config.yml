@@ -12,6 +12,12 @@ workflows:
           context: terraform
           requires:
             - terraform/fmt
+      - terraform/init:
+          checkout: true
+          context: terraform
+          persist-workspace: true
+          requires:
+            - terraform/validate
       - terraform/plan:
           checkout: true
           context: terraform
