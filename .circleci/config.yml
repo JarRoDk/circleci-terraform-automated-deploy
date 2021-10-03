@@ -1,6 +1,6 @@
-version: 2.1
+version: '2.1'
 orbs:
-  terraform: "circleci/terraform@1.1.0"
+  terraform: 'circleci/terraform@dev:alpha'
 workflows:
   deploy_infrastructure:
     jobs:
@@ -18,10 +18,6 @@ workflows:
           persist-workspace: true
           requires:
             - terraform/validate
-      - hold-apply:
-          type: approval
-          requires:
-            - terraform/plan
       - terraform/apply:
           attach-workspace: true
           context: terraform
@@ -29,4 +25,4 @@ workflows:
             branches:
               only: master
           requires:
-            - hold-apply
+            - terraform/plan
